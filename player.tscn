@@ -1,8 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhtqeneyqo82c"]
+[gd_scene load_steps=11 format=3 uid="uid://dhtqeneyqo82c"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2fban"]
+[ext_resource type="Texture2D" uid="uid://di3yatg1jx2i3" path="res://kenney_1-bit-platformer-pack/Tilemap/monochrome_tilemap_packed.png" id="2_2ikt8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfu7l"]
+atlas = ExtResource("2_2ikt8")
+region = Rect2(96, 225, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bseao"]
+atlas = ExtResource("2_2ikt8")
+region = Rect2(16, 225, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjw7s"]
+atlas = ExtResource("2_2ikt8")
+region = Rect2(80, 225, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w462"]
+atlas = ExtResource("2_2ikt8")
+region = Rect2(64, 225, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfdgf"]
+atlas = ExtResource("2_2ikt8")
+region = Rect2(32, 225, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgepl"]
+atlas = ExtResource("2_2ikt8")
+region = Rect2(48, 225, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_41hwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfu7l")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bseao")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjw7s")
+}],
+"loop": true,
+"name": &"jump_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w462")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfdgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgepl")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtspt"]
 
@@ -11,6 +80,8 @@ script = ExtResource("1_2fban")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_41hwm")
+animation = &"jump_down"
+frame_progress = 0.226404
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xtspt")
