@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
-
 @export var speed = 300.0
-@export var jump_velocity = -400.0
-@export var accelartion : float = 15.0
-@export var jumps = 1 
+@export var  jump_velocity = -400.0
+@export var acceleration : float = 15.0
+@export var jumps = 1
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT}
 
@@ -16,7 +15,7 @@ var anim_state = state.IDLE
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func update_state():
+func update_state(): 
 	if anim_state == state.HURT:
 		return
 	if is_on_floor():
@@ -24,29 +23,7 @@ func update_state():
 			anim_state = state.IDLE
 		elif velocity.x != 0:
 			anim_state = state.RUNNING
-	else:
-		if velocity.y < 0:
-			anim_state = state.JUMPUP
-		else:
-			anim_state = state.JUMPDOWN
-
-func update_animation(direction):
-	if direction > 0:
-		animator.flip_h = false
-	elif direction < 0:
-		animator.flip_h = true
-	match anim_state:
-		state.IDLE:
-			animation_player.play("idle")
-		state.RUNNING:
-			animation_player.play("run")
-		state.JUMPUP:
-			animation_player.play("jump_up")
-		state.JUMPDOWN:
-			animation_player.play("jump_down")
-		state.HURT:
-			animation_player.play("hurt")
-
+	
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -61,10 +38,8 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
-		velocity.x = move_toward(velocity.x, speed,direction * accelartion)
+		velocity.x = move_toward(velocity.x,direction * speed,acceleration)
 	else:
-		velocity.x = move_toward(velocity.x, 0, accelartion)
-		
-	update_state()
-	update_animation(direction)
+		velocity.x = move_toward(velocity.x, 0, speed)
+
 	move_and_slide()
