@@ -206,8 +206,9 @@ script = ExtResource("1_2fban")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_41hwm")
-animation = &"hurt"
-frame_progress = 0.0941416
+animation = &"jump_down"
+autoplay = "idle"
+frame_progress = 0.97339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xtspt")
