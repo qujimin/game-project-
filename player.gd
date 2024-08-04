@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 300.0
-@export var  jump_velocity = -400.0
-@export var acceleration : float = 15.0
+@export var speed = 250.0
+@export var  jump_velocity = -300.0
+@export var acceleration : float = 10.0
 @export var jumps = 1
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT}
