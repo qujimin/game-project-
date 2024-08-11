@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://d8lkjkcparh0"]
+
+[ext_resource type="Texture2D" uid="uid://bfc7tddbr31xu" path="res://Clouds 3/Coin.png" id="1_75ivm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fanse"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujy2n"]
+atlas = ExtResource("1_75ivm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs4ag"]
+atlas = ExtResource("1_75ivm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkxex"]
+atlas = ExtResource("1_75ivm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1781"]
+atlas = ExtResource("1_75ivm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcd5f"]
+atlas = ExtResource("1_75ivm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkj21"]
+atlas = ExtResource("1_75ivm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6x1hu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujy2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs4ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkxex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1781")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcd5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkj21")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_dvbuc"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["coin"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6pp5"]
+_data = {
+"coin": SubResource("Animation_dvbuc")
+}
+
+[node name="Coins" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fanse")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6x1hu")
+animation = &"coin"
+autoplay = "coin"
+frame_progress = 0.231623
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_i6pp5")
+}
+autoplay = "coin"
