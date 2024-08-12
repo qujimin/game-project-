@@ -350,7 +350,7 @@ _data = {
 "run": SubResource("Animation_pi7wd")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_2fban")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

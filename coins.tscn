@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://d8lkjkcparh0"]
+[gd_scene load_steps=13 format=3 uid="uid://d8lkjkcparh0"]
 
 [ext_resource type="Texture2D" uid="uid://bfc7tddbr31xu" path="res://Clouds 3/Coin.png" id="1_75ivm"]
+[ext_resource type="Script" path="res://coins.gd" id="1_xgmcx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fanse"]
 radius = 6.0
@@ -89,6 +90,7 @@ _data = {
 }
 
 [node name="Coins" type="Area2D"]
+script = ExtResource("1_xgmcx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fanse")
@@ -105,3 +107,5 @@ libraries = {
 "": SubResource("AnimationLibrary_i6pp5")
 }
 autoplay = "coin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
