@@ -5,6 +5,7 @@ extends Area2D
 func collected():
 	pass
 	
+	GameManager.score += 1
 
 
 func _on_body_entered(body):
