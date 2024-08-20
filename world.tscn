@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxo3ot13f3dfn"]
+[gd_scene load_steps=12 format=3 uid="uid://cxo3ot13f3dfn"]
 
 [ext_resource type="PackedScene" uid="uid://dhtqeneyqo82c" path="res://player.tscn" id="1_loyow"]
 [ext_resource type="Texture2D" uid="uid://c3qaeobohow60" path="res://kenney_1-bit-platformer-pack/Tilemap/monochrome_tilemap.png" id="2_bq83g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bbrwsvay7yvdd" path="res://Clouds 3/3.png" id="4_08fkn"]
 [ext_resource type="PackedScene" uid="uid://d8lkjkcparh0" path="res://coins.tscn" id="5_l2uqt"]
 [ext_resource type="Script" path="res://Label.gd" id="6_n6k3y"]
+[ext_resource type="PackedScene" uid="uid://gqndcnqkuqmg" path="res://Enemy.tscn" id="7_js0rx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf01o"]
 texture = ExtResource("2_bq83g")
@@ -669,3 +670,6 @@ offset_bottom = 23.0
 theme = SubResource("Theme_l66c0")
 text = "SCORE"
 script = ExtResource("6_n6k3y")
+
+[node name="Enemy" parent="." instance=ExtResource("7_js0rx")]
+position = Vector2(123, 3)

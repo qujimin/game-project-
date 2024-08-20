@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://gqndcnqkuqmg"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_a0wud"]
+[ext_resource type="Texture2D" uid="uid://detwqr03naff5" path="res://NightBorne/NightBorne.png" id="2_jgfuv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckqjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urhrt"]
+atlas = ExtResource("2_jgfuv")
+region = Rect2(640, 320, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ab4xo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urhrt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Area2D" groups=["Hurt"]]
+script = ExtResource("1_a0wud")
+flip_time = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ckqjr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ab4xo")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
