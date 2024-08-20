@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	translate(Vector2.RIGHT * direction)
+	translate(Vector2.LEFT * direction)
 	$AnimatedSprite2D.flip_h = direction > 0
 	
 

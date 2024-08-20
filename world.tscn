@@ -672,4 +672,4 @@ text = "SCORE"
 script = ExtResource("6_n6k3y")
 
 [node name="Enemy" parent="." instance=ExtResource("7_js0rx")]
-position = Vector2(123, 3)
+position = Vector2(122, 9)
