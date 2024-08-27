@@ -14,7 +14,12 @@ var anim_state = state.IDLE
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var start_pos = global_position
 
+func rest():
+	global_position = start_pos
+	set_physics_process(true)
+	anim_state = state.IDLE
 
 
 func update_state(): 
@@ -68,3 +73,18 @@ func _physics_process(delta):
 	update_state()
 	update_animation(direction)
 	move_and_slide()
+
+func enemy_checker(enemy):
+	if enemy.is_in_group("Enemy") and velocity.y > 0:
+		enemy.die()
+		velocity.y  = jump_velocity
+	elif enemy.is_in_group("Hurt"):
+		anim_state = state.HURT
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	enemy_checker(area)
+
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	enemy_checker(body)

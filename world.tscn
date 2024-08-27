@@ -671,8 +671,8 @@ theme = SubResource("Theme_l66c0")
 text = "SCORE"
 script = ExtResource("6_n6k3y")
 
-[node name="Enemy" parent="." instance=ExtResource("7_js0rx")]
-position = Vector2(122, 9)
+[node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource("7_js0rx")]
+position = Vector2(122, 8)
 
 [node name="Coins" parent="." instance=ExtResource("5_l2uqt")]
 position = Vector2(330, 73)

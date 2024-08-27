@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://enemy.gd" id="1_a0wud"]
 [ext_resource type="Texture2D" uid="uid://detwqr03naff5" path="res://NightBorne/NightBorne.png" id="2_jgfuv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ckqjr"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecgjo"]
+radius = 11.0
+height = 26.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cknpg"]
 atlas = ExtResource("2_jgfuv")
@@ -74,9 +76,10 @@ script = ExtResource("1_a0wud")
 flip_time = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ckqjr")
+shape = SubResource("CapsuleShape2D_ecgjo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.875, 0.95625)
 sprite_frames = SubResource("SpriteFrames_ab4xo")
 autoplay = "default"
 

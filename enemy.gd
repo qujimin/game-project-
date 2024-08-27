@@ -5,7 +5,8 @@ var direction = 1
 func _ready() -> void:
 	$Timer.wait_time = flip_time
 
-
+func die():
+	queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	translate(Vector2.LEFT * direction)
