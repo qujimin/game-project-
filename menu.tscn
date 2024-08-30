@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck3kke84gowg4"]
+[gd_scene load_steps=5 format=3 uid="uid://ck3kke84gowg4"]
 
 [ext_resource type="Texture2D" uid="uid://b0er00xvxfhia" path="res://NightBorne/meow.jpg" id="1_hrxme"]
 [ext_resource type="Script" path="res://PlayButton.gd" id="2_mp5rt"]
+[ext_resource type="Script" path="res://QuitButton.gd" id="3_rxy38"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_63svh"]
 font_size = 50
@@ -25,9 +26,9 @@ color = Color(0.306923, 0.306923, 0.306923, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = -219.0
+offset_top = -192.0
 offset_right = 1152.0
-offset_bottom = 841.0
+offset_bottom = 868.0
 texture = ExtResource("1_hrxme")
 
 [node name="Button" type="Button" parent="."]
@@ -37,7 +38,7 @@ offset_top = 274.0
 offset_right = 778.0
 offset_bottom = 401.0
 theme_override_font_sizes/font_size = 50
-text = "play"
+text = "Play"
 script = ExtResource("2_mp5rt")
 
 [node name="Label" type="Label" parent="."]
@@ -50,3 +51,13 @@ text = "Glorp Run"
 label_settings = SubResource("LabelSettings_63svh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 436.0
+offset_right = 780.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+script = ExtResource("3_rxy38")
