@@ -24,7 +24,7 @@ func rest():
 
 func update_state(): 
 	if anim_state == state.HURT:
-		get_tree().change_scene_to_file("res://world.tscn")
+		get_tree().change_scene_to_file("res://DEATHNOTE.tscn")
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
 			anim_state = state.IDLE

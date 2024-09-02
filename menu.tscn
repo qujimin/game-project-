@@ -27,7 +27,7 @@ color = Color(0.306923, 0.306923, 0.306923, 1)
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_top = -192.0
-offset_right = 1152.0
+offset_right = 1155.0
 offset_bottom = 868.0
 texture = ExtResource("1_hrxme")
 
@@ -41,6 +41,16 @@ theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("2_mp5rt")
 
+[node name="Button2" type="Button" parent="Button"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 162.0
+offset_right = 425.0
+offset_bottom = 289.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+script = ExtResource("3_rxy38")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 455.0
@@ -51,13 +61,3 @@ text = "Glorp Run"
 label_settings = SubResource("LabelSettings_63svh")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 354.0
-offset_top = 436.0
-offset_right = 780.0
-offset_bottom = 563.0
-theme_override_font_sizes/font_size = 50
-text = "Quit"
-script = ExtResource("3_rxy38")

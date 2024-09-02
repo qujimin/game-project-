@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GameManager="*res://GameManager.gd"
 
+[display]
+
+window/size/viewport_width=1060
+window/size/viewport_height=736
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
