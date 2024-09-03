@@ -5,7 +5,8 @@
 [ext_resource type="Script" path="res://QuitButton.gd" id="3_rxy38"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_63svh"]
-font_size = 50
+line_spacing = 100.0
+font_size = 100
 outline_size = 50
 outline_color = Color(0, 0, 0, 1)
 
@@ -33,10 +34,10 @@ texture = ExtResource("1_hrxme")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 355.0
-offset_top = 274.0
-offset_right = 778.0
-offset_bottom = 401.0
+offset_left = 343.0
+offset_top = 252.0
+offset_right = 766.0
+offset_bottom = 379.0
 theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("2_mp5rt")
@@ -53,10 +54,10 @@ script = ExtResource("3_rxy38")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 455.0
-offset_top = -2.0
-offset_right = 697.0
-offset_bottom = 132.0
+offset_left = 319.0
+offset_top = 24.0
+offset_right = 803.0
+offset_bottom = 161.0
 text = "Glorp Run"
 label_settings = SubResource("LabelSettings_63svh")
 horizontal_alignment = 1

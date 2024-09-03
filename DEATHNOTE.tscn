@@ -7,7 +7,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_oeglo"]
 line_spacing = 100.0
 font_size = 100
-outline_size = 2
+outline_size = 50
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
@@ -31,6 +31,7 @@ offset_bottom = 678.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -56.0
 offset_top = -256.0
 offset_right = 1099.0
@@ -50,10 +51,10 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 282.0
-offset_top = 214.0
-offset_right = 701.0
-offset_bottom = 361.0
+offset_left = 284.0
+offset_top = 221.0
+offset_right = 703.0
+offset_bottom = 368.0
 theme_override_font_sizes/font_size = 50
 text = "Respawn"
 script = ExtResource("1_n8y77")
