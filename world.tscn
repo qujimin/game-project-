@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxo3ot13f3dfn"]
+[gd_scene load_steps=14 format=3 uid="uid://cxo3ot13f3dfn"]
 
 [ext_resource type="PackedScene" uid="uid://dhtqeneyqo82c" path="res://player.tscn" id="1_loyow"]
 [ext_resource type="Texture2D" uid="uid://c3qaeobohow60" path="res://kenney_1-bit-platformer-pack/Tilemap/monochrome_tilemap.png" id="2_bq83g"]
@@ -581,6 +581,9 @@ size = Vector2(271, 20)
 
 [sub_resource type="Theme" id="Theme_l66c0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n7c0"]
+size = Vector2(2522, 19)
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -597,7 +600,8 @@ metadata/_edit_group_ = true
 position = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(632, 695)
+visible = false
+position = Vector2(1064, 856)
 shape = SubResource("RectangleShape2D_sp0fr")
 
 [node name="Player" parent="." instance=ExtResource("1_loyow")]
@@ -632,9 +636,6 @@ motion_mirroring = Vector2(576, 0)
 offset_right = 576.0
 offset_bottom = 648.0
 texture = ExtResource("3_vvaj7")
-
-[node name="SpikeTrap" parent="ParallaxBackground/Stars" instance=ExtResource("4_o28lm")]
-position = Vector2(134, 264)
 
 [node name="Clouds light" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 0.5)
@@ -677,3 +678,16 @@ position = Vector2(250, 249)
 
 [node name="Coins" parent="." instance=ExtResource("5_l2uqt")]
 position = Vector2(420, 266)
+
+[node name="SpikeTrap" parent="." groups=["Hurt"] instance=ExtResource("4_o28lm")]
+position = Vector2(112, 268)
+
+[node name="DeathBox" type="Area2D" parent="." groups=["Hurt"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
+visible = false
+position = Vector2(559, 725.5)
+shape = SubResource("RectangleShape2D_5n7c0")
+
+[node name="SpikeTrap2" parent="." instance=ExtResource("4_o28lm")]
+position = Vector2(95, 268)
