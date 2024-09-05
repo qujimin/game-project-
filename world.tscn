@@ -680,7 +680,7 @@ position = Vector2(250, 249)
 position = Vector2(420, 266)
 
 [node name="SpikeTrap" parent="." groups=["Hurt"] instance=ExtResource("4_o28lm")]
-position = Vector2(112, 268)
+position = Vector2(111, 268)
 
 [node name="DeathBox" type="Area2D" parent="." groups=["Hurt"]]
 
@@ -688,6 +688,3 @@ position = Vector2(112, 268)
 visible = false
 position = Vector2(559, 725.5)
 shape = SubResource("RectangleShape2D_5n7c0")
-
-[node name="SpikeTrap2" parent="." instance=ExtResource("4_o28lm")]
-position = Vector2(95, 268)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://dhtqeneyqo82c"]
+[gd_scene load_steps=38 format=3 uid="uid://dhtqeneyqo82c"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2fban"]
 [ext_resource type="Texture2D" uid="uid://trc7sotad23r" path="res://AnimationSheet_Character.png" id="2_rguxj"]
+[ext_resource type="PackedScene" uid="uid://bg7lgiyokqlcy" path="res://speedrun.tscn" id="3_1t3ki"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnpwb"]
 atlas = ExtResource("2_rguxj")
@@ -436,6 +437,8 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CapsuleShape2D_xo4v6")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_1t3ki")]
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
