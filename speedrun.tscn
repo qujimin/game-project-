@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bg7lgiyokqlcy"]
+[gd_scene load_steps=2 format=3 uid="uid://bg7lgiyokqlcy"]
+
+[ext_resource type="Script" path="res://speedrun.gd" id="1_hoxal"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_hoxal")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 1

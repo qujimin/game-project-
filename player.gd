@@ -88,3 +88,10 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	enemy_checker(body)
+
+
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://winscreen.tscn")

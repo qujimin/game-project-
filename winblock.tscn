@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://5q8kvqbkwu75"]
+
+[ext_resource type="Texture2D" uid="uid://dskvral8xapoi" path="res://kenney_1-bit-platformer-pack/Tiles/Default/tile_0000.png" id="1_ryujf"]
+
+[node name="winblock" type="StaticBody2D"]
+position = Vector2(131, 220)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 33)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("1_ryujf")
+
+[node name="Area2D" type="Area2D" parent="."]

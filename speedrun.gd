@@ -11,10 +11,11 @@ func update_ui():
 	var formatted_time = str(time)
 	var decimal_index = formatted_time.find(".")
 	
-	if decimal_index >ime = formatted_time.left(decimal_index + 3)  # Take only two decimal places
-	 0:
-		formatted_t
-	Global.speedrun_tme = formatted_time
-		i
+	if decimal_index > 0:
+		formatted_time = formatted_time.left(decimal_index + 3)  # Take only two decimal places
+	 
+	Global.speedrun_time = formatted_time
+
+		
 	$Label.text = formatted_time
  

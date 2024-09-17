@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxo3ot13f3dfn"]
+[gd_scene load_steps=16 format=3 uid="uid://cxo3ot13f3dfn"]
 
 [ext_resource type="PackedScene" uid="uid://dhtqeneyqo82c" path="res://player.tscn" id="1_loyow"]
 [ext_resource type="Texture2D" uid="uid://c3qaeobohow60" path="res://kenney_1-bit-platformer-pack/Tilemap/monochrome_tilemap.png" id="2_bq83g"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d8lkjkcparh0" path="res://coins.tscn" id="5_l2uqt"]
 [ext_resource type="Script" path="res://Label.gd" id="6_n6k3y"]
 [ext_resource type="PackedScene" uid="uid://gqndcnqkuqmg" path="res://Enemy.tscn" id="7_js0rx"]
+[ext_resource type="Texture2D" uid="uid://dskvral8xapoi" path="res://kenney_1-bit-platformer-pack/Tiles/Default/tile_0000.png" id="7_v18i7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf01o"]
 texture = ExtResource("2_bq83g")
@@ -584,6 +585,8 @@ size = Vector2(271, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n7c0"]
 size = Vector2(2522, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fayl2"]
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -591,7 +594,7 @@ position = Vector2(1, 0)
 rotation = 0.000350794
 tile_set = SubResource("TileSet_g5ukb")
 format = 2
-layer_0/tile_data = PackedInt32Array(1114113, 983041, 8, 1114114, 1048577, 8, 1114115, 1048577, 8, 1114116, 1048577, 8, 1114117, 1048577, 8, 1114118, 1048577, 8, 1114119, 1048577, 8, 1114120, 1048577, 8, 1114121, 1048577, 8, 1114122, 1048577, 8, 1114123, 1048577, 8, 1114124, 1048577, 8, 1114125, 1048577, 8, 1114126, 1048577, 8, 1114127, 1048577, 8, 1114128, 1048577, 8, 1114129, 1048577, 8, 1114130, 1048577, 8, 1114131, 1048577, 8, 1114132, 1048577, 8, 1114133, 1048577, 8, 1114134, 1048577, 8, 1114135, 1048577, 8, 1114136, 1048577, 8, 1114137, 1048577, 8, 1114138, 1048577, 8, 1114139, 1048577, 8, 1114140, 1048577, 8, 1114141, 1048577, 8, 1114142, 1048577, 8, 1114143, 1048577, 8, 1114144, 1048577, 8, 1114145, 1048577, 8, 1114146, 1048577, 8, 1114147, 1048577, 8, 1114148, 1048577, 8, 1114149, 1048577, 8, 1114150, 1048577, 8, 1114151, 1048577, 8, 1114152, 1048577, 8, 1114153, 1048577, 8, 1114154, 1048577, 8, 1114155, 1048577, 8, 1114156, 1048577, 8, 1114157, 1048577, 8, 1114158, 1048577, 8, 1114159, 1048577, 8, 1114160, 1048577, 8, 1114161, 1048577, 8, 1114162, 1048577, 8, 1114163, 1048577, 8, 1114164, 1048577, 8, 1114165, 1048577, 8, 1114166, 1048577, 8, 1114167, 1048577, 8, 1114168, 1048577, 8, 1114169, 1048577, 8, 1114170, 1048577, 8, 1114171, 1048577, 8, 1114172, 1048577, 8, 1114173, 1048577, 8, 1114174, 1048577, 8, 1114175, 1048577, 8, 1114176, 1048577, 8, 1114177, 1114113, 8)
+layer_0/tile_data = PackedInt32Array(131073, 1048577, 5, 131074, 1048577, 5, 131075, 1048577, 5, 131076, 1114113, 5, 131072, 983041, 5, 196609, 720897, 15, 196610, 720897, 14, 196611, 1048577, 6, 262147, 786433, 15, 262146, 655361, 15, 196612, 1114113, 7, 196608, 983041, 7, 262154, 1048577, 5, 262153, 983041, 5, 327689, 655361, 15, 327690, 1048577, 6, 327694, 720897, 15, 327695, 1114113, 7, 327692, 1048577, 7, 327693, 1048577, 7, 327691, 1048577, 6, 262159, 1114113, 5, 262155, 1048577, 5, 262156, 1048577, 5, 262157, 1048577, 5, 262158, 1048577, 5, 393227, 786433, 15, 393226, 983041, 7, 1114123, 1048577, 8, 1114124, 1048577, 8, 1114125, 1048577, 8, 1114126, 1048577, 8, 1114127, 1048577, 8, 1114128, 1048577, 8, 1114129, 1048577, 8, 1114130, 1048577, 8, 1114131, 1048577, 8, 917505, 1048577, 8, 917506, 1048577, 8, 917507, 1048577, 8, 917508, 1048577, 8, 917509, 1048577, 8, 917510, 1048577, 8, 917511, 1048577, 8, 917512, 1048577, 8, 917513, 1048577, 8)
 layer_1/name = "Layer1"
 layer_1/z_index = -1
 metadata/_edit_group_ = true
@@ -677,10 +680,10 @@ script = ExtResource("6_n6k3y")
 position = Vector2(250, 249)
 
 [node name="Coins" parent="." instance=ExtResource("5_l2uqt")]
-position = Vector2(420, 266)
+position = Vector2(396, 248)
 
 [node name="SpikeTrap" parent="." groups=["Hurt"] instance=ExtResource("4_o28lm")]
-position = Vector2(111, 268)
+position = Vector2(131, 220)
 
 [node name="DeathBox" type="Area2D" parent="." groups=["Hurt"]]
 
@@ -688,3 +691,15 @@ position = Vector2(111, 268)
 visible = false
 position = Vector2(559, 725.5)
 shape = SubResource("RectangleShape2D_5n7c0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="WINBOX" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(89, 201)
+shape = SubResource("RectangleShape2D_fayl2")
+
+[node name="winbox" type="Sprite2D" parent="Area2D"]
+position = Vector2(89, 201)
+texture = ExtResource("7_v18i7")
+
+[connection signal="area_entered" from="Area2D" to="Player" method="_on_area_2d_area_entered"]
