@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnssv84t1qkeh"]
+
+[ext_resource type="AudioStream" uid="uid://dq75rhvy02o4v" path="res://Clouds 3/Quincas Moreira - Robot City ♫ NO COPYRIGHT 8-bit Music.mp3" id="1_p755t"]
+
+[node name="music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_p755t")
+autoplay = true
