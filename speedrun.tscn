@@ -4,6 +4,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_hoxal")
+# Defines a CanvasLayer node that will contain UI elements, with the script for managing its functionality linked.
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 1
@@ -13,3 +14,4 @@ offset_left = -51.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "100.00"
+# Creates a Label node for displaying the time, with preset anchors for positioning and an initial text value.
