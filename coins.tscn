@@ -1,60 +1,71 @@
 [gd_scene load_steps=13 format=3 uid="uid://d8lkjkcparh0"]
 
 [ext_resource type="Texture2D" uid="uid://bfc7tddbr31xu" path="res://Clouds 3/Coin.png" id="1_75ivm"]
+# Loads the coin texture resource from the specified path.
+
 [ext_resource type="Script" path="res://coins.gd" id="1_xgmcx"]
+# Links the script that defines the coin's behavior.
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fanse"]
 radius = 6.0
+# Defines the collision shape for the coin with a specified radius.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujy2n"]
 atlas = ExtResource("1_75ivm")
 region = Rect2(0, 0, 32, 32)
+# Defines the first frame of the coin animation using a portion of the atlas texture.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs4ag"]
 atlas = ExtResource("1_75ivm")
 region = Rect2(64, 0, 32, 32)
+# Defines the second frame of the coin animation.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkxex"]
 atlas = ExtResource("1_75ivm")
 region = Rect2(96, 0, 32, 32)
+# Defines the third frame of the coin animation.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1781"]
 atlas = ExtResource("1_75ivm")
 region = Rect2(128, 0, 32, 32)
+# Defines the fourth frame of the coin animation.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcd5f"]
 atlas = ExtResource("1_75ivm")
 region = Rect2(160, 0, 32, 32)
+# Defines the fifth frame of the coin animation.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkj21"]
 atlas = ExtResource("1_75ivm")
 region = Rect2(32, 0, 32, 32)
+# Defines the sixth frame of the coin animation.
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6x1hu"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujy2n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qs4ag")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hkxex")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1781")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lcd5f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bkj21")
-}],
-"loop": true,
-"name": &"coin",
-"speed": 5.0
+    "frames": [{
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_ujy2n")
+    }, {
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_qs4ag")
+    }, {
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_hkxex")
+    }, {
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_c1781")
+    }, {
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_lcd5f")
+    }, {
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_bkj21")
+    }],
+    "loop": true,
+    "name": &"coin",
+    "speed": 5.0
 }]
+# Defines the sprite frames for the coin animation, which will loop through the frames.
 
 [sub_resource type="Animation" id="Animation_dvbuc"]
 length = 1.2
@@ -66,10 +77,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+    "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+    "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+    "update": 1,
+    "values": [0, 1, 2, 3, 4, 5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -78,34 +89,41 @@ tracks/1/path = NodePath(".:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["coin"]
+    "times": PackedFloat32Array(0),
+    "transitions": PackedFloat32Array(1),
+    "update": 1,
+    "values": ["coin"]
 }
+# Defines an animation that transitions between frames for the coin sprite and sets it to play the coin animation.
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i6pp5"]
 _data = {
-"coin": SubResource("Animation_dvbuc")
+    "coin": SubResource("Animation_dvbuc")
 }
+# Creates an animation library that includes the defined coin animation.
 
 [node name="Coins" type="Area2D"]
 script = ExtResource("1_xgmcx")
+# Main node representing the coin, which will handle interactions and behavior.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fanse")
+# Collision shape for detecting interactions with the coin.
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6x1hu")
 animation = &"coin"
 autoplay = "coin"
 frame_progress = 0.231623
+# Animated sprite node that visually represents the coin using the defined sprite frames and plays the coin animation.
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_i6pp5")
+    "": SubResource("AnimationLibrary_i6pp5")
 }
 autoplay = "coin"
+# Animation player node that controls the animation playback for the coin.
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+# Connects the body_entered signal to the method that handles when a body collides with the coin.
