@@ -1,13 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://gnhr3auvix11"]
 
 [ext_resource type="Texture2D" uid="uid://b0er00xvxfhia" path="res://NightBorne/meow.jpg" id="1_h06e1"]
+# Defines a texture resource (an image) to be used within the scene.
+
 [ext_resource type="Script" path="res://menu.gd" id="2_wq7xl"]
+# Links to an external script (menu.gd) which will contain the logic for the menu interactions.
 
 [sub_resource type="LabelSettings" id="LabelSettings_oeglo"]
 line_spacing = 100.0
 font_size = 100
 outline_size = 50
 outline_color = Color(0, 0, 0, 1)
+# Configures settings for labels, such as line spacing, font size, outline size, and outline color.
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,6 +24,7 @@ offset_right = 60.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
+# Sets up the main Control node, which serves as a container for UI elements, with specified layout settings.
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -28,6 +33,7 @@ offset_top = -52.0
 offset_right = 999.0
 offset_bottom = 678.0
 color = Color(0, 0, 0, 1)
+# Adds a ColorRect to provide a solid background color (black) for the UI.
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -36,6 +42,7 @@ offset_top = -256.0
 offset_right = 1099.0
 offset_bottom = 804.0
 texture = ExtResource("1_h06e1")
+# Adds a TextureRect to display the specified image texture as part of the UI.
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -50,6 +57,7 @@ text = "You won!"
 label_settings = SubResource("LabelSettings_oeglo")
 horizontal_alignment = 1
 vertical_alignment = 1
+# Adds a Label displaying the text "You won!" with defined alignment and label settings.
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 1
@@ -67,3 +75,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "You won!"
 script = ExtResource("2_wq7xl")
+# Adds a Button labeled "You won!" linked to the menu.gd script for handling button actions.
+
