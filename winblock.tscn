@@ -1,15 +1,20 @@
 [gd_scene load_steps=2 format=3 uid="uid://5q8kvqbkwu75"]
 
 [ext_resource type="Texture2D" uid="uid://dskvral8xapoi" path="res://kenney_1-bit-platformer-pack/Tiles/Default/tile_0000.png" id="1_ryujf"]
+# Defines a texture resource for the win block, sourced from a specific tile image.
 
 [node name="winblock" type="StaticBody2D"]
 position = Vector2(131, 220)
+# Creates a StaticBody2D node named "winblock", positioning it in the scene to serve as an obstacle or object.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+# Adds a CollisionShape2D to the win block, allowing for collision detection with other bodies.
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(64, 33)
 scale = Vector2(1.125, 1.125)
 texture = ExtResource("1_ryujf")
+# Adds a Sprite2D node to visually represent the win block, setting its position, scale, and applying the defined texture.
 
 [node name="Area2D" type="Area2D" parent="."]
+# Includes an Area2D node for detecting overlaps with other objects, typically used for triggering events or interactions.
