@@ -9,6 +9,7 @@ line_spacing = 100.0
 font_size = 100
 outline_size = 50
 outline_color = Color(0, 0, 0, 1)
+# Defines the styling for the labels used in the UI.
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,6 +22,7 @@ offset_right = 60.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
+# Main container for all UI elements in the game over screen.
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -29,6 +31,7 @@ offset_top = -52.0
 offset_right = 999.0
 offset_bottom = 678.0
 color = Color(0, 0, 0, 1)
+# ColorRect serves as the overlay background for the UI.
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -37,6 +40,7 @@ offset_top = -256.0
 offset_right = 1099.0
 offset_bottom = 804.0
 texture = ExtResource("1_7refi")
+# TextureRect displays an image as part of the game over screen.
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -51,6 +55,7 @@ text = "You died!"
 label_settings = SubResource("LabelSettings_oeglo")
 horizontal_alignment = 1
 vertical_alignment = 1
+# Label that displays the game over message to the player.
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -68,6 +73,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Respawn"
 script = ExtResource("1_n8y77")
+# Button that allows the player to respawn after death.
 
 [node name="Button" type="Button" parent="Button"]
 layout_mode = 0
@@ -78,3 +84,5 @@ offset_bottom = 351.0
 theme_override_font_sizes/font_size = 50
 text = "Title Screen"
 script = ExtResource("2_p7lad")
+# Button that allows the player to return to the title screen.
+
