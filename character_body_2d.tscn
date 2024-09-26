@@ -1,17 +1,22 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2ivodq7dmvf3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ifq2"]
-#Defines the sprite frames for the animated character.
+
+# Defines the sprite frames for the animated character.
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-#Main node representing the character, which handles movement and physics.
+
+# Main node representing the character, which handles movement and physics.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-#Collision shape that defines the physical boundaries of the character.
+
+# Collision shape that defines the physical boundaries of the character.
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5ifq2")
-#Animated sprite node that visually represents the character using the defined sprite frames.
+
+# Animated sprite node that visually represents the character using the defined sprite frames.
 
 [node name="Timer" type="Timer" parent="."]
-#Timer node that can be used for timing events related to the character.
+
+# Timer node that can be used for timing events related to the character.
