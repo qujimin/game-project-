@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed = 250.0
-@export var  jump_velocity = -300.0
-@export var acceleration : float = 25.0
+@export var jump_velocity = -300.0
+@export var acceleration: float = 25.0
 @export var jumps = 1
 
 enum state {IDLE, RUNNING, JUMPUP, JUMPDOWN, HURT}
@@ -20,7 +20,7 @@ func rest():
 	global_position = start_pos
 	set_physics_process(true)
 	anim_state = state.IDLE
-
+# Resets the player's position and state when called.
 
 func update_state(): 
 	if anim_state == state.HURT:
@@ -35,8 +35,9 @@ func update_state():
 			anim_state = state.JUMPUP
 		else:
 			anim_state = state.JUMPDOWN
+# Updates the player's state based on movement and velocity.
 
-func update_animation(direction) :
+func update_animation(direction):
 	if direction > 0:
 		animator.flip_h = false
 	elif direction < 0:
@@ -52,6 +53,7 @@ func update_animation(direction) :
 			animation_player.play("jump_down")
 		state.HURT:
 			animation_player.play("hurt")
+# Updates the animation based on the player's state and movement direction.
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -63,35 +65,33 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
-		velocity.x = move_toward(velocity.x,direction * speed,acceleration)
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
 	update_state()
 	update_animation(direction)
 	move_and_slide()
+# Handles the player's movement, gravity, and animation updates in the physics process.
 
 func enemy_checker(enemy):
 	if enemy.is_in_group("Enemy") and velocity.y > 0:
 		enemy.die()
-		velocity.y  = jump_velocity
+		velocity.y = jump_velocity
 	elif enemy.is_in_group("Hurt"):
 		anim_state = state.HURT
+# Checks collision with enemies and handles interactions based on velocity and enemy group.
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	enemy_checker(area)
-
-
+# Called when another area enters the player's hitbox, checks enemy interactions.
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	enemy_checker(body)
-
-
-
-
+# Called when a body enters the player's hitbox, checks enemy interactions.
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://winscreen.tscn")
+# Changes the scene to the win screen when the player enters a designated area.
