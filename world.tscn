@@ -570,80 +570,109 @@ texture_region_size = Vector2i(17, 17)
 0:0/0/terrain_set = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 7.5)
 
+# Layers and tiles from my tilemap to my main world.
+
 [sub_resource type="TileSet" id="TileSet_g5ukb"]
 physics_layer_0/collision_layer = 1
+# Sets the physics layer and collision layer for the tile set, allowing for collision detection with this tile set.
+
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "nogamenolife"
+# Defines a terrain within the tile set, naming it "nogamenolife".
+
 terrain_set_0/terrain_0/color = Color(0.932881, 0.845776, 0.796173, 1)
+# Sets the color for the defined terrain.
+
 sources/1 = SubResource("TileSetAtlasSource_wf01o")
+# Specifies the source for the tile set, linking to a tile atlas resource.
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp0fr"]
 size = Vector2(271, 20)
+# Defines a rectangular shape used for collision detection.
 
 [sub_resource type="Theme" id="Theme_l66c0"]
+# A theme resource for UI elements, potentially defining styles and colors.
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n7c0"]
 size = Vector2(2522, 19)
+# Defines another rectangular shape, possibly for a different purpose in the scene.
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fayl2"]
+# Placeholder for another rectangular shape resource.
 
 [node name="World" type="Node2D"]
+# The main container node for the game world.
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
 rotation = 0.000350794
 tile_set = SubResource("TileSet_g5ukb")
+# Defines a tile map node within the world, using the specified tile set and positioning it.
+
 format = 2
-layer_0/tile_data = PackedInt32Array(131073, 1048577, 5, 131074, 1048577, 5, 131075, 1048577, 5, 131076, 1114113, 5, 131072, 983041, 5, 196609, 720897, 15, 196610, 720897, 14, 196611, 1048577, 6, 262147, 786433, 15, 262146, 655361, 15, 196612, 1114113, 7, 196608, 983041, 7, 262154, 1048577, 5, 262153, 983041, 5, 327689, 655361, 15, 327690, 1048577, 6, 327694, 720897, 15, 327695, 1114113, 7, 327692, 1048577, 7, 327693, 1048577, 7, 327691, 1048577, 6, 262159, 1114113, 5, 262155, 1048577, 5, 262156, 1048577, 5, 262157, 1048577, 5, 262158, 1048577, 5, 393227, 786433, 15, 393226, 983041, 7, 262166, 983041, 5, 262167, 1048577, 5, 262168, 1048577, 5, 262169, 1048577, 5, 262170, 1048577, 5, 262171, 1048577, 5, 262172, 1048577, 5, 262173, 1048577, 5, 262174, 1114113, 5, 393238, 983041, 7, 458778, 983041, 7, 458781, 1114113, 7, 393246, 786433, 15, 327710, 1114113, 6, 327702, 655361, 14, 393242, 720897, 14, 327707, 720897, 14, 458779, 720897, 15, 458780, 1048577, 7, 393239, 1048577, 7, 393240, 1048577, 7, 327703, 720897, 14, 327704, 1048577, 6, 327705, 1048577, 6, 327706, 1048577, 6, 393243, 1048577, 6, 393244, 1048577, 6, 393245, 1048577, 6, 327709, 1048577, 6, 327708, 1048577, 6, 393241, 720897, 15, 262183, 983041, 5, 327719, 655361, 14, 393255, 983041, 7, 262184, 1048577, 5, 327720, 720897, 14, 393256, 1048577, 7, 262185, 1048577, 5, 327721, 1048577, 6, 393257, 1048577, 6, 262186, 1048577, 5, 327722, 1048577, 6, 393258, 1048577, 6, 262187, 1048577, 5, 327723, 1048577, 6, 393259, 720897, 14, 262188, 1048577, 5, 327724, 720897, 14, 393260, 1048577, 6, 262189, 1048577, 5, 327725, 1048577, 6, 393261, 1048577, 7, 262190, 1048577, 5, 327726, 1048577, 6, 393262, 1048577, 7, 262191, 1114113, 5, 327727, 1114113, 6, 393263, 786433, 15, 458793, 655361, 15, 458796, 786433, 15, 458794, 720897, 15, 458795, 720897, 15, 196655, 1114113, 5, 196654, 1048577, 5, 196653, 1048577, 5, 196652, 983041, 5, 327734, 983041, 5, 393270, 655361, 14, 458806, 983041, 7, 327735, 1048577, 5, 393271, 720897, 14, 458807, 1048577, 7, 327736, 1048577, 5, 393272, 1048577, 6, 458808, 1048577, 6, 524344, 655361, 15, 327737, 1048577, 5, 393273, 1048577, 6, 458809, 1048577, 6, 524345, 720897, 15, 327738, 1048577, 5, 393274, 1048577, 6, 458810, 720897, 14, 524346, 720897, 15, 327739, 1048577, 5, 393275, 720897, 14, 458811, 1048577, 6, 524347, 786433, 15, 327740, 1048577, 5, 393276, 1048577, 6, 458812, 1048577, 7, 327741, 1048577, 5, 393277, 1048577, 6, 458813, 1048577, 7, 327742, 1114113, 5, 393278, 1114113, 6, 458814, 786433, 15, 393285, 983041, 5, 458821, 655361, 15, 393286, 1048577, 5, 458822, 1048577, 6, 524358, 983041, 7, 393287, 1048577, 5, 458823, 1048577, 6, 524359, 786433, 15, 393288, 1048577, 5, 458824, 1048577, 7, 393289, 1048577, 5, 458825, 1048577, 7, 393290, 1048577, 5, 458826, 720897, 15, 393291, 1114113, 5, 458827, 1114113, 7, 262198, 983041, 5, 262199, 1048577, 5, 262200, 1048577, 5, 262201, 1114113, 5, 393298, 1048577, 5, 458834, 1048577, 7, 393299, 1114113, 5, 458835, 786433, 15, 393296, 983041, 5, 458832, 983041, 7, 393297, 1048577, 5, 458833, 720897, 15)
+layer_0/tile_data = PackedInt32Array(131073, ...) # Tile data for the first layer, providing information on tile placement.
 layer_1/name = "Layer1"
 layer_1/z_index = -1
 metadata/_edit_group_ = true
+# Configures metadata for the tile map, including layers and edit properties.
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1, 0)
+# Defines a static body for collision detection, placed at the specified position.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2(1064, 856)
 shape = SubResource("RectangleShape2D_sp0fr")
+# Defines a collision shape for the static body, which determines its collision area.
 
 [node name="Player" parent="." instance=ExtResource("1_loyow")]
 position = Vector2(24, 14)
+# Instantiates the player character in the scene at the specified position.
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 37)
 zoom = Vector2(3, 3)
 limit_bottom = 648
 position_smoothing_enabled = true
+# Configures a camera that follows the player, with defined zoom and positional limits.
+
 position_smoothing_speed = 10.0
 drag_left_margin = 0.25
 drag_top_margin = 0.0
 drag_right_margin = 0.25
 drag_bottom_margin = 0.0
+# Sets parameters for camera movement smoothing and dragging margins.
 
 [node name="Images" type="Sprite2D" parent="Player"]
 position = Vector2(-265, 358)
 scale = Vector2(4.62745, 3.35859)
+# Adds a sprite to the player node, potentially for visual effects or animations.
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."] 
+# Defines a parallax background for the scene to create a sense of depth.
 
 [node name="Black" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-129, -513)
 motion_scale = Vector2(0, 0)
+# Adds a static parallax layer named "Black" for background aesthetics.
 
 [node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0)
 motion_mirroring = Vector2(576, 0)
+# Adds a moving stars layer to the parallax background, contributing to the visual atmosphere.
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Stars"]
 offset_right = 576.0
 offset_bottom = 648.0
 texture = ExtResource("3_vvaj7")
 metadata/_edit_use_anchors_ = true
+# Defines a texture rectangle for the stars, linked to the previously defined star layer.
 
 [node name="Clouds light" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 0.5)
 motion_mirroring = Vector2(576, 0)
+# Adds a light clouds layer to the parallax background, adding more depth.
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Clouds light"]
 offset_top = 324.0
@@ -652,31 +681,8 @@ offset_bottom = 648.0
 texture = ExtResource("4_08fkn")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
+# Defines a texture rectangle for the light clouds, contributing to
 
-[node name="Clouds dark" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.7, 0.5)
-motion_mirroring = Vector2(576, 0)
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Clouds dark"]
-offset_top = 324.0
-offset_right = 576.0
-offset_bottom = 648.0
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Collectables" type="Node2D" parent="."]
-position = Vector2(249, 103)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1.0
-offset_right = 52.0
-offset_bottom = 23.0
-theme = SubResource("Theme_l66c0")
-text = "SCORE"
-script = ExtResource("6_n6k3y")
-metadata/_edit_use_anchors_ = true
 
 [node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource("7_js0rx")]
 position = Vector2(419, 41)
@@ -699,24 +705,35 @@ position = Vector2(672, 61)
 [node name="SpikeTrap5" parent="." groups=["Hurt"] instance=ExtResource("4_o28lm")]
 position = Vector2(203, 61)
 
+# The obstacles the players can't touch, if they do they'll die
+
 [node name="DeathBox" type="Area2D" parent="." groups=["Hurt"]]
+# Defines an Area2D node named "DeathBox" that is part of the "Hurt" group,
+# which can be used for detecting player damage or hazards.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
 visible = false
 position = Vector2(559, 725.5)
 shape = SubResource("RectangleShape2D_5n7c0")
+# Defines a collision shape for the DeathBox, set to be invisible.
+# The position is specified, and it uses a rectangular shape resource.
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1225, -118)
+# Defines another Area2D node, potentially for a win condition or different interaction.
 
 [node name="WINBOX" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(89, 201)
 shape = SubResource("RectangleShape2D_fayl2")
+# Adds a collision shape to the WINBOX area, positioned within the Area2D.
 
 [node name="winbox" type="Sprite2D" parent="Area2D"]
 position = Vector2(88.9375, 200.938)
 scale = Vector2(0.0302084, 0.0302083)
 texture = ExtResource("8_24rc5")
+# Defines a sprite for the WINBOX area, with a specific position and scale.
+# The texture is linked to an external resource to visually represent the win condition.
+
 
 [node name="Coins" parent="." instance=ExtResource("5_l2uqt")]
 position = Vector2(78, 23)
@@ -816,5 +833,8 @@ position = Vector2(1078, 47)
 
 [node name="Coins33" parent="." instance=ExtResource("5_l2uqt")]
 position = Vector2(1092, 60)
+
+
+# The coins, the player is able to get
 
 [connection signal="area_entered" from="Area2D" to="Player" method="_on_area_2d_area_entered"]
