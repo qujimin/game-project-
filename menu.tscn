@@ -9,6 +9,7 @@ line_spacing = 100.0
 font_size = 100
 outline_size = 50
 outline_color = Color(0, 0, 0, 1)
+# Label settings resource with custom font size, line spacing, and outline settings.
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+# Root control node for UI elements, set to expand and fill the screen.
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -24,6 +26,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.306923, 0.306923, 0.306923, 1)
+# Background color for the UI using a ColorRect node.
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -31,6 +34,7 @@ offset_top = -192.0
 offset_right = 1155.0
 offset_bottom = 868.0
 texture = ExtResource("1_hrxme")
+# Displays an image texture in the background using a TextureRect node.
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -48,6 +52,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("2_mp5rt")
+# "Play" button positioned centrally in the UI with custom font size, using the PlayButton script.
 
 [node name="Button2" type="Button" parent="Button"]
 layout_mode = 0
@@ -58,6 +63,7 @@ offset_bottom = 289.0
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 script = ExtResource("3_rxy38")
+# "Quit" button nested under the Play button, using the QuitButton script.
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -72,3 +78,5 @@ text = "Glorp Run"
 label_settings = SubResource("LabelSettings_63svh")
 horizontal_alignment = 1
 vertical_alignment = 1
+# Displays the game title "Glorp Run" at the center of the screen using a custom LabelSettings resource.
+
