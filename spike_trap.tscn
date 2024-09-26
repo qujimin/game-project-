@@ -1,21 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://wnshutsf6kgr"]
 
 [ext_resource type="Texture2D" uid="uid://c2k2c8affuxgn" path="res://kenney_1-bit-platformer-pack/Tilemap/tile_set_aleatorio.png" id="1_q5nvl"]
+# Defines a texture resource for the spike trap, sourced from a specific tileset image.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xe02v"]
 atlas = ExtResource("1_q5nvl")
 region = Rect2(64, 64, 16, 16)
+# Creates an AtlasTexture from the defined texture, specifying a region to use for the spike trap's sprite.
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_np6xn"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xe02v")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+    "frames": [{
+        "duration": 1.0,
+        "texture": SubResource("AtlasTexture_xe02v")
+    }],
+    "loop": true,
+    "name": &"default",
+    "speed": 5.0
 }]
+# Sets up sprite frames for an animation using the AtlasTexture, with a specified duration, looping enabled, and animation speed.
 
 [sub_resource type="Animation" id="Animation_d5n2k"]
 length = 1.6
@@ -26,10 +29,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+    "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+    "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+    "update": 1,
+    "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,35 +41,42 @@ tracks/1/path = NodePath(".:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["default"]
+    "times": PackedFloat32Array(0),
+    "transitions": PackedFloat32Array(1),
+    "update": 1,
+    "values": ["default"]
 }
+# Defines an animation with two tracks: one for the sprite frame and another for the animation name, enabling looping and specifying keyframes.
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wlaid"]
 _data = {
-"default": SubResource("Animation_d5n2k")
+    "default": SubResource("Animation_d5n2k")
 }
+# Creates an AnimationLibrary that contains the defined animation, allowing for easy playback and management.
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgmya"]
 size = Vector2(22, 10)
+# Defines the shape for collision detection, representing the physical area of the spike trap.
 
 [node name="SpikeTrap" type="Area2D"]
+# Creates an Area2D node for the spike trap, serving as the base for collision detection and interactions.
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Hurt"]]
 position = Vector2(-4.76837e-07, -8)
 scale = Vector2(1.375, 1.375)
 sprite_frames = SubResource("SpriteFrames_np6xn")
 autoplay = "default"
+# Adds an AnimatedSprite2D node for displaying the animation of the spike trap, scaled appropriately and set to autoplay the default animation.
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_wlaid")
+    "": SubResource("AnimationLibrary_wlaid")
 }
 autoplay = "default"
+# Includes an AnimationPlayer to control the animations of the AnimatedSprite2D, using the AnimationLibrary for playback.
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Hurt"]]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_tgmya")
+# Sets up a CollisionShape2D for detecting overlaps, linked to the defined RectangleShape2D for collision boundaries.
