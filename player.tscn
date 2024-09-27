@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://player.gd" id="1_2fban"]
 [ext_resource type="Texture2D" uid="uid://trc7sotad23r" path="res://AnimationSheet_Character.png" id="2_rguxj"]
 [ext_resource type="PackedScene" uid="uid://bg7lgiyokqlcy" path="res://speedrun.tscn" id="3_1t3ki"]
+# External resources are defined here, including a script, a texture, and a packed scene.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnpwb"]
 atlas = ExtResource("2_rguxj")
@@ -19,6 +20,7 @@ region = Rect2(64, 192, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6ebd"]
 atlas = ExtResource("2_rguxj")
 region = Rect2(96, 192, 32, 32)
+# Sub-resources for different atlas textures, defining regions in a texture atlas for character sprites.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfe4k"]
 atlas = ExtResource("2_rguxj")
@@ -35,6 +37,7 @@ region = Rect2(0, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_55l27"]
 atlas = ExtResource("2_rguxj")
 region = Rect2(32, 32, 32, 32)
+# More sub-resources defining regions for different character animations in the same atlas texture.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1sg1"]
 atlas = ExtResource("2_rguxj")
@@ -51,6 +54,7 @@ region = Rect2(192, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uobe5"]
 atlas = ExtResource("2_rguxj")
 region = Rect2(224, 160, 32, 32)
+# Additional sub-resources specifying regions for another set of character animations.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6b7q"]
 atlas = ExtResource("2_rguxj")
@@ -67,6 +71,7 @@ region = Rect2(64, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_s65vu"]
 atlas = ExtResource("2_rguxj")
 region = Rect2(96, 160, 32, 32)
+# This block contains additional sub-resources defining regions for more character animations.
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vs5vo"]
 atlas = ExtResource("2_rguxj")
@@ -99,6 +104,7 @@ region = Rect2(192, 96, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb2x"]
 atlas = ExtResource("2_rguxj")
 region = Rect2(224, 96, 32, 32)
+# This block defines more sub-resources for different frames used in character animations.
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_41hwm"]
 animations = [{
@@ -199,8 +205,18 @@ animations = [{
 "name": &"run",
 "speed": 5.0
 }]
+# Sprite frames are defined here, creating animations for different character states like hurt, idle, jump, and run.
+
+
+[gd_scene load_steps=38 format=3 uid="uid://dhtqeneyqo82c"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_2fban"]
+[ext_resource type="Texture2D" uid="uid://trc7sotad23r" path="res://AnimationSheet_Character.png" id="2_rguxj"]
+[ext_resource type="PackedScene" uid="uid://bg7lgiyokqlcy" path="res://speedrun.tscn" id="3_1t3ki"]
+# External resources defined here include the player script, a texture for character animations, and a packed scene.
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtspt"]
+# A CapsuleShape2D resource used for collision detection.
 
 [sub_resource type="Animation" id="Animation_817eb"]
 length = 0.001
@@ -226,6 +242,7 @@ tracks/1/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+# Defines an animation resource for the player's position change along the x and y axes. It uses bezier curves for smooth interpolation.
 
 [sub_resource type="Animation" id="Animation_hwbpr"]
 length = 2.0
@@ -293,6 +310,7 @@ tracks/4/keys = {
 "method": &"rest"
 }]
 }
+# Animation for the "hurt" state of the player. It changes the frame, animation type, and position with bezier interpolation.
 
 [sub_resource type="Animation" id="Animation_xcwxv"]
 length = 0.8
@@ -321,6 +339,7 @@ tracks/1/keys = {
 "update": 1,
 "values": ["idle"]
 }
+# Animation for the "idle" state. It changes the frame values sequentially to animate the idle state of the character.
 
 [sub_resource type="Animation" id="Animation_s12mf"]
 length = 0.8
@@ -349,6 +368,7 @@ tracks/1/keys = {
 "update": 1,
 "values": ["jump_down"]
 }
+# Animation for the "jump_down" state, specifying how the character should animate during a downward jump.
 
 [sub_resource type="Animation" id="Animation_6g8wq"]
 length = 0.8
@@ -377,68 +397,4 @@ tracks/1/keys = {
 "update": 1,
 "values": ["jump_up"]
 }
-
-[sub_resource type="Animation" id="Animation_pi7wd"]
-length = 1.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["run"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ippi"]
-_data = {
-"RESET": SubResource("Animation_817eb"),
-"hurt": SubResource("Animation_hwbpr"),
-"idle": SubResource("Animation_xcwxv"),
-"jump_down": SubResource("Animation_s12mf"),
-"jump_up": SubResource("Animation_6g8wq"),
-"run": SubResource("Animation_pi7wd")
-}
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xo4v6"]
-
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_2fban")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_41hwm")
-animation = &"hurt"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_xtspt")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_8ippi")
-}
-
-[node name="HitBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("CapsuleShape2D_xo4v6")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("3_1t3ki")]
-
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
-[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+# Animation for the "jump_up" state, defining how the character anim
